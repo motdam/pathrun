@@ -4,9 +4,6 @@ Generates circular running routes of a target distance that stick to public foot
 
 ![Three 10 km loops generated from one starting point near Chipping Campden](docs/example-routes.png)
 
-Ask Strava for a 10 km loop and it will happily send you down a B road with no pavement, past a
-public footpath running parallel to it through a field. pathrun loads the rights of way from
-OpenStreetMap and treats them as the good option rather than an afterthought.
 
 ## Try it
 
