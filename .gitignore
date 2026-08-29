@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Cached OSM graphs and generated route output
+data/
+*.graphml
+*.html
+*.gpx
+
+# Jupyter
+.ipynb_checkpoints/
+
+# osmnx HTTP cache
+cache/
+
+# Home location and anything else private
+.env
+
+# macOS
+.DS_Store
