@@ -32,30 +32,31 @@ most of the network is only partly tagged.
 
 `notebooks/01_a_map_is_a_graph.ipynb` walks through all of that against real data.
 
-## Personal records
-
-`metrics.py` computes splits, paces and records from GPX files in `data/runs/`, so they survive
-whichever tracking service you happen to be using. Records are best efforts: the quickest you covered
-a distance anywhere inside any run, not your fastest run of that length.
-
 
 ## Layout
 
 ```
 pathrun/
     config.py      settings, read from .env
+    geocoding.py   postcode to coordinates
     network.py     fetching and caching the graph
     strategy.py    what counts as a good route
     cost.py        applying a strategy, and scoring a route
     loops.py       circular route generation
     gpx.py         GPX export
-    runs.py        loading GPX exported from Strava
-    metrics.py     splits, paces and personal records
 notebooks/         01 explains the graph, 02 is the workbench
 tests/
 ```
 
 Everything runs through uv: `uv run pytest`, `uv run python scripts/...`.
 
-After cloning, run `uv run nbstripout --install` so notebook outputs stay out of git. Your `.env`,
-cached maps and GPX files are already ignored.
+After cloning, run `uv run pre-commit install`. That wires up the hook that strips notebook outputs
+before they can be committed, which matters because those outputs contain the GPS coordinates of
+wherever you run. Your `.env`, cached maps and GPX files are already ignored.
+
+## Licence
+
+MIT.
+
+Map data from [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, licensed under
+the Open Database Licence. Routes generated from it inherit that licence.

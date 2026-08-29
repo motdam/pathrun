@@ -1,0 +1,17 @@
+# Strips notebook outputs before they can be committed. This duplicates the nbstripout git filter on
+# purpose: the filter lives in .git/config and is not cloned, so on a fresh checkout it silently does
+# nothing. This file is committed, so `pre-commit install` is the one step that has to be remembered.
+repos:
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=2000]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace

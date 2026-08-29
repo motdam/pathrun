@@ -1,9 +1,19 @@
 [project]
 name = "pathrun"
 version = "0.1.0"
-description = "Footpath-aware circular running route finder for the UK"
+description = "Circular running routes on UK public footpaths, generated from OpenStreetMap"
 readme = "README.md"
 requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Tom Madden" }]
+keywords = ["running", "routing", "openstreetmap", "gpx", "footpaths", "rights-of-way"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+]
 dependencies = [
     "folium>=0.20.0",
     "gpxpy>=1.6.2",
@@ -12,11 +22,16 @@ dependencies = [
     "scikit-learn>=1.9.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/motdam/pathrun"
+Issues = "https://github.com/motdam/pathrun/issues"
+
 [dependency-groups]
 dev = [
     "jupyter>=1.1.1",
     "matplotlib>=3.11.1",
     "nbstripout>=0.9.1",
+    "pre-commit>=4.0.0",
     "pytest>=9.1.1",
 ]
 
