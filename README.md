@@ -20,9 +20,7 @@ Then open `notebooks/02_route_workbench.ipynb`, set a distance, and run it. You 
 scored on how much of each is on a right of way and how much doubles back, a map to look at them on,
 and a GPX export of the one you pick.
 
-Any app that reads GPX will follow it. OsmAnd is free and works offline. Garmin watches take the same
-file copied into `GARMIN/NewFiles/`. Strava is not an option, since creating a route there needs a
-subscription and its API has no endpoint for making one.
+Any app that reads GPX will follow it. OsmAnd is free, allows you to upload gpx files and works offline.
 
 ## How it works
 
@@ -32,10 +30,6 @@ times longer is still worth it. It reads `designation` for legal rights of way, 
 `sidewalk`, `surface` and `foot` where present. A missing tag never counts against an edge, because
 most of the network is only partly tagged.
 
-Loops are the hard part. The cheapest route from your house to your house is to stay where you are,
-and constraining a circuit to a target length has no exact solution. So the generator samples
-bearings, routes out and back, measures what came back, and corrects until the length is close.
-
 `notebooks/01_a_map_is_a_graph.ipynb` walks through all of that against real data.
 
 ## Personal records
@@ -44,16 +38,6 @@ bearings, routes out and back, measures what came back, and corrects until the l
 whichever tracking service you happen to be using. Records are best efforts: the quickest you covered
 a distance anywhere inside any run, not your fastest run of that length.
 
-## Related tools
-
-[Trail Router](https://trailrouter.com) does the closest thing to this, free and in a browser, with
-no setup. Try it first. It optimises for greenery, meaning parks and water and hiking routes, rather
-than for legal rights of way, and it does not weigh road danger. If that distinction does not matter
-to you, use Trail Router. RoutMix, Komoot and Garmin Connect all generate round trips too.
-
-What this does differently is treat UK rights of way as the thing to maximise, penalise roads by
-speed limit and absence of pavement, show its working on every candidate, and let you change the
-weights yourself.
 
 ## Layout
 
